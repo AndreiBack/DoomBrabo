@@ -4,7 +4,7 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var shoot_sound = $ShootSound
 @onready var death_sound = $DeathSound
-
+const world = preload("res://world.tscn")
 
 const SPEED = 5.0
 const MOUSE_SENS = 0.5
@@ -51,7 +51,9 @@ func _physics_process(delta):
 
 
 func restart():
-	get_tree().reload_current_scene()
+	$"../../AudioStreamPlayer2D".stop()
+	get_parent().add_child(world.instantiate())
+	queue_free()
 
 func shoot():
 	if !can_shoot:
@@ -72,4 +74,5 @@ func kill():
 		death_sound.play()
 		$CanvasLayer/DeathScreen.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Global.kills = 0
 	

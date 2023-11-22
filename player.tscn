@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=15 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7cdse"]
 [ext_resource type="Texture2D" uid="uid://bsqnedffjihvv" path="res://assets/gun_sprites.png" id="2_m4cmg"]
 [ext_resource type="AudioStream" uid="uid://bkqm2dduwl8kd" path="res://assets/revolver_shot1.wav" id="3_6k5et"]
 [ext_resource type="Script" path="res://Label.gd" id="3_v5xux"]
 [ext_resource type="AudioStream" uid="uid://cckyufg7142fb" path="res://assets/tomp3.cc - Dark Souls  You Died  Sound Effect_320kbps.mp3" id="4_4knwg"]
+[ext_resource type="FontFile" uid="uid://db03jqlsoux8" path="res://Chicarego.tres" id="4_nis87"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wtrx4"]
 
@@ -178,23 +179,18 @@ theme_override_colors/font_color = Color(0.321569, 0, 0, 1)
 text = "Tentar novamente
 "
 
-[node name="UI" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/UI"]
-layout_mode = 0
-offset_left = 96.0
-offset_top = 417.0
-offset_right = 136.0
-offset_bottom = 440.0
-script = ExtResource("3_v5xux")
-
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6k5et")
 bus = &"SFX"
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_4knwg")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 63.0
+offset_bottom = 32.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_nis87")
+theme_override_font_sizes/font_size = 30
+text = "Kills "
+script = ExtResource("3_v5xux")

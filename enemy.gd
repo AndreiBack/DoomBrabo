@@ -15,7 +15,6 @@ var respawn_timer = 0.0
 var original_position: Vector3
 var cooldown_time = 2.0  # Define o tempo de cooldown em segundos
 var current_cooldown = 0.0  # Controla o tempo restante de cooldown
-var kills = 0  # Contador de kills
 
 func _ready():
 	original_position = global_position  # Armazena a posição original no início
@@ -66,7 +65,7 @@ func kill():
 	collision_shape_3d.disabled = true
 	move_speed += 0.8
 	# Incrementa o contador de kills
-	kills += 1
+	Global.kills += 1
 
 func handle_respawn(delta):
 	respawn_timer -= delta
