@@ -155,6 +155,16 @@ mesh = SubResource("BoxMesh_wehy4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D12/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_2viho")
 
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Environment"]
+transform = Transform3D(2.10958, 0, 0, 0, 19.265, 0, 0, 0, 39.9827, 54.4557, 0.86968, -38.7403)
+material_override = SubResource("StandardMaterial3D_q2oq7")
+mesh = SubResource("BoxMesh_wehy4")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Environment/MeshInstance3D16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/MeshInstance3D16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_2viho")
+
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Environment"]
 transform = Transform3D(2.10958, 0, 0, 0, 19.265, 0, 0, 0, 39.9827, 18.7781, 0.86968, 0.177511)
 material_override = SubResource("StandardMaterial3D_q2oq7")
@@ -286,4 +296,5 @@ stream = ExtResource("5_euk1l")
 autoplay = true
 script = ExtResource("6_nd85u")
 
+[connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

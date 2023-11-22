@@ -11,8 +11,8 @@ anchor_bottom = 1.0
 script = ExtResource("1_r6j4a")
 
 [node name="Doom" type="Sprite2D" parent="."]
-position = Vector2(578.875, 329)
-scale = Vector2(0.810532, 0.745801)
+position = Vector2(578.875, 326)
+scale = Vector2(0.810532, 0.739082)
 texture = ExtResource("1_8eegc")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

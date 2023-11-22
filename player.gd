@@ -69,11 +69,13 @@ func shoot_anim_done():
 func kill():
 	playerLife -= 1
 	if playerLife <= 0:
+		if Global.highest_kills <= Global.kills:
+			Global.highest_kills = Global.kills
 		dead = true
 		death_sound.play()
 		$CanvasLayer/DeathScreen.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		Global.kills = 0
 		playerLife = 3
+		
 
 	

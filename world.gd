@@ -10,6 +10,9 @@ func _process(delta):
 	pass
 	
 	
-func reload():
-	get_tree().reload_current_scene()
 
+
+func _on_ready():
+
+	Global.kills = 0
+	
