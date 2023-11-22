@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://t1djrdtrnhq5"]
+[gd_scene load_steps=18 format=3 uid="uid://t1djrdtrnhq5"]
 
 [ext_resource type="Texture2D" uid="uid://cv4ll7qhq0yuy" path="res://assets/hexagonal_metal_plate_floor_doom_retexture_by_hoover1979_da7o92x-pre.jpg" id="1_8rh5h"]
+[ext_resource type="Script" path="res://world.gd" id="1_e47u2"]
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_nmeto"]
 [ext_resource type="PackedScene" uid="uid://cwvf1fxfs8x37" path="res://enemy.tscn" id="2_gp3ts"]
 [ext_resource type="Texture2D" uid="uid://c1nyhe67l4c34" path="res://assets/WhiteBrickWall01_4K_Height.png" id="2_macj2"]
@@ -45,6 +46,7 @@ background_mode = 1
 background_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="World" type="Node3D"]
+script = ExtResource("1_e47u2")
 
 [node name="Environment" type="Node3D" parent="."]
 
