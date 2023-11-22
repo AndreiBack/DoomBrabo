@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bccpx5ojsnu1i"
+path="res://.godot/imported/tomp3.cc - ROBLOX Oof Sound Effect_320kbps.mp3-478fcf2a5b745b8869e4626f17bb3c0d.mp3str"
+
+[deps]
+
+source_file="res://assets/tomp3.cc - ROBLOX Oof Sound Effect_320kbps.mp3"
+dest_files=["res://.godot/imported/tomp3.cc - ROBLOX Oof Sound Effect_320kbps.mp3-478fcf2a5b745b8869e4626f17bb3c0d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

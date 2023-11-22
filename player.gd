@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $CanvasLayer/GunBase/AnimatedSprite2D
 @onready var ray_cast_3d = $RayCast3D
 @onready var shoot_sound = $ShootSound
+@onready var death_sound = $DeathSound
 
 
 const SPEED = 5.0
@@ -21,6 +22,7 @@ func _input(event):
 		return
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+
 
 func _process(delta):
 	if Input.is_action_just_pressed("exit"):
@@ -65,6 +67,9 @@ func shoot_anim_done():
 
 func kill():
 	dead = true
+	death_sound.play()
 	$CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
+
+

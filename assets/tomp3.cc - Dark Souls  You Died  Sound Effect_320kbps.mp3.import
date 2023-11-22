@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cckyufg7142fb"
+path="res://.godot/imported/tomp3.cc - Dark Souls  You Died  Sound Effect_320kbps.mp3-1dc2cb0e45f2e336b546a03261f869b2.mp3str"
+
+[deps]
+
+source_file="res://assets/tomp3.cc - Dark Souls  You Died  Sound Effect_320kbps.mp3"
+dest_files=["res://.godot/imported/tomp3.cc - Dark Souls  You Died  Sound Effect_320kbps.mp3-1dc2cb0e45f2e336b546a03261f869b2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
