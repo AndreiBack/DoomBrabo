@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://t1djrdtrnhq5"]
+[gd_scene load_steps=17 format=3 uid="uid://t1djrdtrnhq5"]
 
 [ext_resource type="Texture2D" uid="uid://cv4ll7qhq0yuy" path="res://assets/hexagonal_metal_plate_floor_doom_retexture_by_hoover1979_da7o92x-pre.jpg" id="1_8rh5h"]
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_nmeto"]
 [ext_resource type="PackedScene" uid="uid://cwvf1fxfs8x37" path="res://enemy.tscn" id="2_gp3ts"]
 [ext_resource type="Texture2D" uid="uid://c1nyhe67l4c34" path="res://assets/WhiteBrickWall01_4K_Height.png" id="2_macj2"]
-[ext_resource type="AudioStream" uid="uid://baobdi2138j4x" path="res://assets/tomp3.cc - Doom OST  E1M1  At Dooms Gate.mp3" id="5_p6f3s"]
+[ext_resource type="AudioStream" uid="uid://baobdi2138j4x" path="res://assets/tomp3.cc - Doom OST  E1M1  At Dooms Gate.mp3" id="5_euk1l"]
+[ext_resource type="Script" path="res://AudioStreamPlayer2D.gd" id="6_nd85u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yfqd"]
 albedo_color = Color(1, 1, 1, 0)
@@ -279,5 +280,8 @@ transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -0.119753, 
 transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, 14.0045, 0, -36.7133)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_p6f3s")
+stream = ExtResource("5_euk1l")
 autoplay = true
+script = ExtResource("6_nd85u")
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

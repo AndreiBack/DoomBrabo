@@ -5,16 +5,15 @@ extends CharacterBody3D
 @onready var death_sound = $DeathSound
 @onready var hit_player = $HitPlayer
 
-@export var move_speed = 6.0
+@export var move_speed = 2.0
 @export var attack_range = 2.0
 @export var respawn_time = 6.0  # Tempo de respawn
 
 @onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
 var dead = false
-var playerLife = 3
 var respawn_timer = 0.0
 var original_position: Vector3
-var cooldown_time = 1.3  # Define o tempo de cooldown em segundos
+var cooldown_time = 2.0  # Define o tempo de cooldown em segundos
 var current_cooldown = 0.0  # Controla o tempo restante de cooldown
 var kills = 0  # Contador de kills
 
@@ -54,19 +53,18 @@ func attempt_to_kill_player():
 
 	# Verifica se o resultado está vazio e se o inimigo não está em cooldown
 	if result.is_empty() and current_cooldown <= 0.0 and player.dead == false:
-		playerLife -= 1
 		current_cooldown = cooldown_time
+		player.kill()
 		hit_player.play()
 
-		if playerLife == 0:
-			kill()
+
 
 func kill():
 	death_sound.play()
 	dead = true
 	animated_sprite_3d.play("death")
 	collision_shape_3d.disabled = true
-
+	move_speed += 0.8
 	# Incrementa o contador de kills
 	kills += 1
 

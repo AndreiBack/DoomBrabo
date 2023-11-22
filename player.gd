@@ -11,7 +11,7 @@ const MOUSE_SENS = 0.5
 
 var can_shoot = true
 var dead = false
-
+var playerLife = 3
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	animated_sprite_2d.animation_finished.connect(shoot_anim_done)
@@ -66,8 +66,10 @@ func shoot_anim_done():
 	can_shoot = true
 
 func kill():
-	dead = true
-	death_sound.play()
-	$CanvasLayer/DeathScreen.show()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	playerLife -= 1
+	if playerLife <= 0:
+		dead = true
+		death_sound.play()
+		$CanvasLayer/DeathScreen.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
