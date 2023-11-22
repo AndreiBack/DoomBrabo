@@ -27,7 +27,7 @@ func handle_selection(_current_selection):
 		get_tree().change_scene_to_file("res://world.tscn")
 		queue_free()
 	elif _current_selection == 1:
-		get_parent().add_child(first_scene.instantiate())
+		get_tree().change_scene_to_file("res://FirstScene.tscn")
 		queue_free()
 	elif _current_selection == 2:
 		get_tree().quit()

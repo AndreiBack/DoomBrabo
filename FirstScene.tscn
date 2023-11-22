@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://drij41refty5y"]
+[gd_scene load_steps=4 format=3 uid="uid://drij41refty5y"]
 
 [ext_resource type="FontFile" uid="uid://db03jqlsoux8" path="res://Chicarego.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://bm25xi04fmcx3" path="res://assets/doom.jpg" id="1_8eegc"]
+[ext_resource type="Script" path="res://FirstScene.gd" id="1_r6j4a"]
 
 [node name="FirstScene" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource("1_r6j4a")
 
 [node name="Doom" type="Sprite2D" parent="."]
-position = Vector2(574.875, 324.125)
-scale = Vector2(0.804934, 0.725364)
+position = Vector2(578.875, 329)
+scale = Vector2(0.810532, 0.745801)
 texture = ExtResource("1_8eegc")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
@@ -54,6 +56,19 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 28
 text = "BOTAO ESQUERDO MOUSE - ATIRAR
+"
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 2
+offset_left = 392.0
+offset_top = 347.0
+offset_right = 794.0
+offset_bottom = 377.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 28
+text = "BACKSPACE - VOLTAR PARA O MENU
 "
 horizontal_alignment = 1
 

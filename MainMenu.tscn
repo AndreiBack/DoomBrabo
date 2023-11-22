@@ -19,8 +19,8 @@ material = SubResource("CanvasItemMaterial_qpr1e")
 layout_mode = 2
 
 [node name="Doom" type="Sprite2D" parent="ColorRect"]
-position = Vector2(576.625, 322.875)
-scale = Vector2(0.803884, 0.725924)
+position = Vector2(573.5, 324)
+scale = Vector2(0.809657, 0.730123)
 texture = ExtResource("2_q8r1g")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
