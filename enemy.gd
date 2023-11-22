@@ -14,9 +14,9 @@ var dead = false
 var playerLife = 3
 var respawn_timer = 0.0
 var original_position: Vector3
-
 var cooldown_time = 1.3  # Define o tempo de cooldown em segundos
 var current_cooldown = 0.0  # Controla o tempo restante de cooldown
+var kills = 0  # Contador de kills
 
 func _ready():
 	original_position = global_position  # Armazena a posição original no início
@@ -59,13 +59,16 @@ func attempt_to_kill_player():
 		hit_player.play()
 
 		if playerLife == 0:
-			player.kill()
+			kill()
 
 func kill():
 	death_sound.play()
 	dead = true
 	animated_sprite_3d.play("death")
 	collision_shape_3d.disabled = true
+
+	# Incrementa o contador de kills
+	kills += 1
 
 func handle_respawn(delta):
 	respawn_timer -= delta

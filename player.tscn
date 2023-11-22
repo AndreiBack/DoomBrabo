@@ -1,11 +1,26 @@
-[gd_scene load_steps=12 format=3 uid="uid://2go8h24o332j"]
+[gd_scene load_steps=14 format=3 uid="uid://2go8h24o332j"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_7cdse"]
 [ext_resource type="Texture2D" uid="uid://bsqnedffjihvv" path="res://assets/gun_sprites.png" id="2_m4cmg"]
 [ext_resource type="AudioStream" uid="uid://bkqm2dduwl8kd" path="res://assets/revolver_shot1.wav" id="3_6k5et"]
+[ext_resource type="Script" path="res://Label.gd" id="3_v5xux"]
 [ext_resource type="AudioStream" uid="uid://cckyufg7142fb" path="res://assets/tomp3.cc - Dark Souls  You Died  Sound Effect_320kbps.mp3" id="4_4knwg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wtrx4"]
+
+[sub_resource type="GDScript" id="GDScript_8ck2h"]
+script/source = "extends CanvasLayer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yhjbv"]
 atlas = ExtResource("2_m4cmg")
@@ -73,6 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_wtrx4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_8ck2h")
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -161,6 +177,20 @@ grow_vertical = 0
 theme_override_colors/font_color = Color(0.321569, 0, 0, 1)
 text = "Tentar novamente
 "
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 417.0
+offset_right = 136.0
+offset_bottom = 440.0
+script = ExtResource("3_v5xux")
 
 [node name="ShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6k5et")

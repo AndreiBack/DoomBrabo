@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://t1djrdtrnhq5"]
+[gd_scene load_steps=16 format=3 uid="uid://t1djrdtrnhq5"]
 
 [ext_resource type="Texture2D" uid="uid://cv4ll7qhq0yuy" path="res://assets/hexagonal_metal_plate_floor_doom_retexture_by_hoover1979_da7o92x-pre.jpg" id="1_8rh5h"]
 [ext_resource type="PackedScene" uid="uid://2go8h24o332j" path="res://player.tscn" id="1_nmeto"]
 [ext_resource type="PackedScene" uid="uid://cwvf1fxfs8x37" path="res://enemy.tscn" id="2_gp3ts"]
 [ext_resource type="Texture2D" uid="uid://c1nyhe67l4c34" path="res://assets/WhiteBrickWall01_4K_Height.png" id="2_macj2"]
+[ext_resource type="AudioStream" uid="uid://baobdi2138j4x" path="res://assets/tomp3.cc - Doom OST  E1M1  At Dooms Gate.mp3" id="5_p6f3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2yfqd"]
 albedo_color = Color(1, 1, 1, 0)
@@ -229,6 +230,21 @@ transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -1.56269, 0
 [node name="Enemy3" parent="Enemies" instance=ExtResource("2_gp3ts")]
 transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -1.56269, 0, -16.5741)
 
+[node name="Enemy15" parent="Enemies" instance=ExtResource("2_gp3ts")]
+transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -9.53858, 0, -16.5741)
+
+[node name="Enemy16" parent="Enemies" instance=ExtResource("2_gp3ts")]
+transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -9.53858, 0, -23.2437)
+
+[node name="Enemy17" parent="Enemies" instance=ExtResource("2_gp3ts")]
+transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -4.56914, 0, -23.2437)
+
+[node name="Enemy18" parent="Enemies" instance=ExtResource("2_gp3ts")]
+transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, 4.04169, 0, -23.2437)
+
+[node name="Enemy19" parent="Enemies" instance=ExtResource("2_gp3ts")]
+transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, 5.79851, 0, -23.2437)
+
 [node name="Enemy4" parent="Enemies" instance=ExtResource("2_gp3ts")]
 transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, 16.1214, 0, -16.5741)
 
@@ -261,3 +277,7 @@ transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, -0.119753, 
 
 [node name="Enemy14" parent="Enemies" instance=ExtResource("2_gp3ts")]
 transform = Transform3D(1.08138, 0, 0, 0, 1.08138, 0, 0, 0, 1.08138, 14.0045, 0, -36.7133)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_p6f3s")
+autoplay = true

@@ -71,5 +71,3 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
-
-
