@@ -25,21 +25,21 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
-offset_left = 525.0
-offset_top = 180.0
-offset_right = 644.0
-offset_bottom = 210.0
+offset_left = 512.0
+offset_top = 160.0
+offset_right = 653.0
+offset_bottom = 195.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 33
 text = "Controles:"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 2
-offset_left = 504.0
-offset_top = 250.0
-offset_right = 672.0
-offset_bottom = 280.0
+offset_left = 501.0
+offset_top = 204.0
+offset_right = 669.0
+offset_bottom = 234.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 28
@@ -48,10 +48,10 @@ text = "WASD - MOVER
 
 [node name="Label3" type="Label" parent="."]
 layout_mode = 2
-offset_left = 401.0
-offset_top = 291.0
-offset_right = 781.0
-offset_bottom = 321.0
+offset_left = 397.0
+offset_top = 238.0
+offset_right = 777.0
+offset_bottom = 268.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 28
@@ -61,10 +61,10 @@ horizontal_alignment = 1
 
 [node name="Label5" type="Label" parent="."]
 layout_mode = 2
-offset_left = 392.0
-offset_top = 347.0
-offset_right = 794.0
-offset_bottom = 377.0
+offset_left = 388.0
+offset_top = 281.0
+offset_right = 790.0
+offset_bottom = 311.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 28
@@ -74,13 +74,52 @@ horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="."]
 layout_mode = 2
-offset_left = 385.0
-offset_top = 418.0
-offset_right = 819.0
-offset_bottom = 508.0
+offset_left = 381.0
+offset_top = 328.0
+offset_right = 815.0
+offset_bottom = 418.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 28
-text = "A CADA VEZ QUE UM INIMIGO MORRER, VAI RENASCER MAIS VELOZ"
+text = "A CADA VEZ QUE UM INIMIGO MORRER, A VELOCIDADE DELES VAI AUMENTAR"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 2
+offset_left = 381.0
+offset_top = 394.0
+offset_right = 815.0
+offset_bottom = 484.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 28
+text = "A CADA 15 INIMIGOS QUE VOCE MATAR, VOCE FICA MAIS RAPIDO!!!"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 2
+offset_left = 374.0
+offset_top = 468.0
+offset_right = 808.0
+offset_bottom = 528.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 28
+text = "A CADA 20 INIMIGOS, VOCE ATIRA MAIS RAPIDO"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 2
+offset_left = 374.0
+offset_top = 468.0
+offset_right = 808.0
+offset_bottom = 528.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 28
+text = "A CADA 20 INIMIGOS, VOCE ATIRA MAIS RAPIDO"
 horizontal_alignment = 1
 autowrap_mode = 1

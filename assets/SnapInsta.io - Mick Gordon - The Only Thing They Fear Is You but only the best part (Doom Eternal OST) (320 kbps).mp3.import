@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cu36eo46jtm57"
+path="res://.godot/imported/SnapInsta.io - Mick Gordon - The Only Thing They Fear Is You but only the best part (Doom Eternal OST) (320 kbps).mp3-a6acedc37b96993e4fb23cdc611aab1d.mp3str"
+
+[deps]
+
+source_file="res://assets/SnapInsta.io - Mick Gordon - The Only Thing They Fear Is You but only the best part (Doom Eternal OST) (320 kbps).mp3"
+dest_files=["res://.godot/imported/SnapInsta.io - Mick Gordon - The Only Thing They Fear Is You but only the best part (Doom Eternal OST) (320 kbps).mp3-a6acedc37b96993e4fb23cdc611aab1d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

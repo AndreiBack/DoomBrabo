@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://cwvf1fxfs8x37"]
+[gd_scene load_steps=17 format=3 uid="uid://cwvf1fxfs8x37"]
 
 [ext_resource type="Texture2D" uid="uid://ct050m6yl7y1p" path="res://assets/monster_sprites.png" id="1_bcacj"]
 [ext_resource type="Script" path="res://enemy.gd" id="1_yaijs"]
 [ext_resource type="AudioStream" uid="uid://qasban73mvym" path="res://assets/monster_die.wav" id="2_pdc53"]
 [ext_resource type="AudioStream" uid="uid://bccpx5ojsnu1i" path="res://assets/tomp3.cc - ROBLOX Oof Sound Effect_320kbps.mp3" id="4_s3gkd"]
+[ext_resource type="AudioStream" uid="uid://bkivsjhwpk16t" path="res://assets/tomp3.cc - Undertale Sound Effect  Heal_320kbps.mp3" id="5_xn7v5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ss20f"]
 
@@ -97,9 +98,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15583, 0)
 pixel_size = 0.009
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_kmmja")
-animation = &"death"
+animation = &"idle"
 autoplay = "idle"
-speed_scale = 0.9
+speed_scale = 0.7
 
 [node name="DeathSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_pdc53")
@@ -109,3 +110,9 @@ bus = &"SFX"
 
 [node name="HitPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_s3gkd")
+bus = &"SFX"
+
+[node name="HealthUp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_xn7v5")
+volume_db = 20.444
+bus = &"SFX"

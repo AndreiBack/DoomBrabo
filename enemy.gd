@@ -4,8 +4,7 @@ extends CharacterBody3D
 @onready var collision_shape_3d = $CollisionShape3D
 @onready var death_sound = $DeathSound
 @onready var hit_player = $HitPlayer
-
-@export var move_speed = 2.0
+@onready var health_up = $HealthUp
 @export var attack_range = 2.0
 @export var respawn_time = 6.0  # Tempo de respawn
 
@@ -31,7 +30,7 @@ func _physics_process(delta):
 	var dir = player.global_position - global_position
 	dir.y = 0.0
 	dir = dir.normalized()
-	velocity = dir * move_speed
+	velocity = dir * Global.enemy_move_speed
 	move_and_slide()
 
 	# Verifica se o inimigo está em cooldown antes de tentar atacar novamente
@@ -63,13 +62,13 @@ func kill():
 	dead = true
 	animated_sprite_3d.play("death")
 	collision_shape_3d.disabled = true
-	move_speed += 0.8
-	# Incrementa o contador de kills
+	Global.enemy_move_speed += 0.055
+	animated_sprite_3d.speed_scale += 0.02
 	Global.kills += 1
+	power_ups()
 
 func handle_respawn(delta):
 	respawn_timer -= delta
-
 	if respawn_timer <= 0.0:
 		respawn()
 		respawn_timer = respawn_time
@@ -79,3 +78,12 @@ func respawn():
 	dead = false
 	animated_sprite_3d.play("idle")
 	collision_shape_3d.disabled = false
+
+func power_ups():
+	if Global.kills % 15 == 0:
+		player.SPEED += 0.5
+	if Global.kills % 20 == 0:
+		player.animated_sprite_2d.speed_scale+=0.3
+	if Global.kills % 50 == 0:
+		player.playerLife +=1
+		health_up.play()

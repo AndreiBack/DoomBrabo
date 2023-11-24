@@ -4,9 +4,10 @@ extends CharacterBody3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var shoot_sound = $ShootSound
 @onready var death_sound = $DeathSound
+@onready var doom_soundtrack = $"../../DoomSoundtrack"
 
-const SPEED = 5.0
-const MOUSE_SENS = 0.5
+var SPEED = 5.0
+
 
 var can_shoot = true
 var dead = false
@@ -20,7 +21,7 @@ func _input(event):
 	if dead:
 		return
 	if event is InputEventMouseMotion:
-		rotation_degrees.y -= event.relative.x * MOUSE_SENS
+		rotation_degrees.y -= event.relative.x * Global.MOUSE_SENS
 
 
 func _process(delta):
@@ -28,13 +29,13 @@ func _process(delta):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
 		get_tree().change_scene_to_file("res://MainMenu.tscn")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	if dead:
 		return
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
-		print(playerLife)
-		print(dead)
+
 
 func _physics_process(delta):
 	if dead:
@@ -53,6 +54,7 @@ func _physics_process(delta):
 
 func restart():
 	get_tree().reload_current_scene()
+	
 
 func shoot():
 	if !can_shoot:
@@ -67,15 +69,15 @@ func shoot_anim_done():
 	can_shoot = true
 
 func kill():
+
 	playerLife -= 1
 	if playerLife <= 0:
 		if Global.highest_kills <= Global.kills:
 			Global.highest_kills = Global.kills
 		dead = true
+		doom_soundtrack.stop()
 		death_sound.play()
 		$CanvasLayer/DeathScreen.show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		playerLife = 3
-		
 
 	

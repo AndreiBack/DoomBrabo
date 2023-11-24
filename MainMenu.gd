@@ -6,6 +6,8 @@ const first_scene = preload("res://FirstScene.tscn")
 @onready var selector_one = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer/HBoxContainer/Selector
 @onready var selector_two = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer2/HBoxContainer/Selector
 @onready var selector_three = $CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/Selector
+@onready var sens_value = $Node2D/sens_value
+@onready var mouse_slider = $Node2D/mouseSlider
 
 var current_selection = 0
 
@@ -42,3 +44,11 @@ func set_current_selection(_current_selection):
 		selector_two.text = ">"
 	elif _current_selection == 2:
 		selector_three.text = ">"
+
+
+
+
+func _on_mouse_slider_value_changed(value):
+	Global.MOUSE_SENS=value
+	sens_value.text = str(value)
+

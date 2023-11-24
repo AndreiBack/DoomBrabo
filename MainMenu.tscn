@@ -12,7 +12,12 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 script = ExtResource("2")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 material = SubResource("CanvasItemMaterial_qpr1e")
@@ -96,6 +101,44 @@ theme_override_fonts/font = ExtResource("1")
 theme_override_font_sizes/font_size = 33
 text = "Exit"
 
+[node name="OptionName" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/CenterContainer3/HBoxContainer/OptionName"]
+layout_mode = 0
+offset_left = -533.0
+offset_top = 83.0
+offset_right = -479.0
+offset_bottom = 118.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 33
+text = "Mouse sensitivity"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_iv6rq")
 autoplay = true
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="sens_value" type="Label" parent="Node2D"]
+offset_left = 301.0
+offset_top = 514.0
+offset_right = 364.0
+offset_bottom = 546.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="mouseSlider" type="HSlider" parent="Node2D"]
+z_as_relative = false
+offset_left = 16.0
+offset_top = 522.0
+offset_right = 294.27
+offset_bottom = 538.0
+auto_translate = false
+localize_numeral_system = false
+min_value = 0.1
+max_value = 5.0
+step = 0.05
+value = 0.1
+
+[connection signal="value_changed" from="Node2D/mouseSlider" to="." method="_on_mouse_slider_value_changed"]

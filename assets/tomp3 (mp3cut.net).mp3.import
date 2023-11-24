@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://j82cg6ouwad1"
+path="res://.godot/imported/tomp3 (mp3cut.net).mp3-179751e05dd7561052aa5e8de8a5dedc.mp3str"
+
+[deps]
+
+source_file="res://assets/tomp3 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/tomp3 (mp3cut.net).mp3-179751e05dd7561052aa5e8de8a5dedc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
