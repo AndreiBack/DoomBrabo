@@ -1,6 +1,6 @@
 extends AudioStreamPlayer2D
 
-@onready var doom_soundtrack = $"../DoomSoundtrack"
+@onready var doom_soundtrack_2 = $"."
 
 func _on_finished():
-	doom_soundtrack.play()
+	doom_soundtrack_2.play()

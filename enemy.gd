@@ -5,7 +5,7 @@ extends CharacterBody3D
 @onready var death_sound = $DeathSound
 @onready var hit_player = $HitPlayer
 @onready var health_up = $HealthUp
-@export var attack_range = 2.0
+@export var attack_range = 1.3
 @export var respawn_time = 6.0  # Tempo de respawn
 
 @onready var player: CharacterBody3D = get_tree().get_first_node_in_group("player")
@@ -16,8 +16,16 @@ var cooldown_time = 2.0  # Define o tempo de cooldown em segundos
 var current_cooldown = 0.0  # Controla o tempo restante de cooldown
 
 func _ready():
-	original_position = global_position  # Armazena a posição original no início
-	respawn_timer = respawn_time  # Inicia o timer de respawn no início
+
+	respawn_timer = respawn_time  
+	original_position = global_position 
+	Global.kills = 0
+	Global.enemy_move_speed = 1.5
+	if Global.mode == 2: 
+		player.SPEED = 10.0
+		player.animated_sprite_2d.speed_scale = 2.0
+		Global.enemy_move_speed = 9.0
+		animated_sprite_3d.speed_scale =1.1
 
 func _physics_process(delta):
 	if dead:
@@ -58,14 +66,12 @@ func attempt_to_kill_player():
 
 
 func kill():
+
 	death_sound.play()
 	dead = true
 	animated_sprite_3d.play("death")
 	collision_shape_3d.disabled = true
-	Global.enemy_move_speed += 0.055
-	animated_sprite_3d.speed_scale += 0.02
-	Global.kills += 1
-	power_ups()
+	modes()
 
 func handle_respawn(delta):
 	respawn_timer -= delta
@@ -79,11 +85,33 @@ func respawn():
 	animated_sprite_3d.play("idle")
 	collision_shape_3d.disabled = false
 
+func modes():
+	if Global.mode == 1:
+		power_ups()
+	if Global.mode == 2:
+		power_ups_hell()
+
 func power_ups():
 	if Global.kills % 15 == 0:
-		player.SPEED += 0.5
+		player.SPEED += 0.7
 	if Global.kills % 20 == 0:
-		player.animated_sprite_2d.speed_scale+=0.3
+		player.animated_sprite_2d.speed_scale+=0.4
 	if Global.kills % 50 == 0:
 		player.playerLife +=1
 		health_up.play()
+	Global.enemy_move_speed += 0.05
+	animated_sprite_3d.speed_scale += 0.02
+	Global.kills += 1
+	
+
+func power_ups_hell():
+	if Global.kills % 20 == 0:
+		player.SPEED += 1.0
+	if Global.kills % 25 == 0:
+		player.animated_sprite_2d.speed_scale+=0.8
+	if Global.kills % 40 == 0:
+		player.playerLife +=1
+		health_up.play()
+	Global.enemy_move_speed += 0.04
+	animated_sprite_3d.speed_scale += 0.05
+	Global.kills += 2

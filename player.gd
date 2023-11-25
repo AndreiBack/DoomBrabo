@@ -25,12 +25,10 @@ func _input(event):
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
+
 	if Input.is_action_just_pressed("restart"):
 		get_tree().change_scene_to_file("res://MainMenu.tscn")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-
 	if dead:
 		return
 	if Input.is_action_just_pressed("shoot"):
